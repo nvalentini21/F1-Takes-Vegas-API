@@ -6,7 +6,7 @@ app.use(cors({
 allowedOrigins: ['localhost:3000']
 }));
 
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3000);
 app.locals.title = 'F1 Vegas';
 
 app.get('/', (request, response) => {

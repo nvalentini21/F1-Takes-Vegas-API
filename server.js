@@ -18,10 +18,6 @@ app.get('/', (request, response) => {
 app.locals.drivers = drivers;
 app.locals.constructors = constructors;
 
-app.locals.constructors = [
-  {id: 12, name: 'Ferrari', base: 'Italy', symbol_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Scuderia_Ferrari_Logo.svg/1280px-Scuderia_Ferrari_Logo.svg.png'}
-]
-
 app.get('/api/v1/drivers', (request, response) => {
   const drivers = app.locals.drivers;
 

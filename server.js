@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors')
 const drivers = require('./data/drivers')
 const constructors = require('./data/constructors')
+const drinks = require('./data/drinks')
 
 app.use(cors({
 allowedOrigins: ['localhost:3000']
@@ -17,6 +18,7 @@ app.get('/', (request, response) => {
 
 app.locals.drivers = drivers;
 app.locals.constructors = constructors;
+app.locals.drinks = drinks;
 
 app.get('/api/v1/drivers', (request, response) => {
   const drivers = app.locals.drivers;
@@ -29,6 +31,14 @@ app.get('/api/v1/constructors', (request, response) => {
 
   response.json({ constructors });
 });
+
+app.get('/api/v1/drinks', (request, response) => {
+  const drinks = app.locals.drinks;
+
+  response.json({ drinks });
+});
+
+
 
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on http://localhost:${app.get('port')}.`);
